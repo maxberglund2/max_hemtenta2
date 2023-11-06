@@ -18,7 +18,7 @@
 <?php
     if(isset($_POST['Submit']))
     { 
-        include './funktioner/connection.php';
+        include 'connection.php';
 
         $name = $_POST["name"];
         $description = $_POST["description"];
