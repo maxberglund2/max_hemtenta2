@@ -42,6 +42,8 @@ th {
 }
 td {
     padding:20px;
+    max-width: 300px;
+    overflow: scroll;
 }
 img {
     height:100px;

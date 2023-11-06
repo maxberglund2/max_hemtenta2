@@ -36,7 +36,7 @@
                 ?>
             </table>
             <div class="btnMenu">
-                <input type="submit" name="submit" value="Remove" style="background-color:red; margin-top: 0;">
+                <input type="submit" name="submit" value="Ta bort" style="background-color:red; margin-top: 0;">
 
                 <a href="http://localhost/max_hemtenta2">Användargränssnitt</a>
                 <a href="http://localhost/max_hemtenta2/funktioner/add.php">Lägg till produkt</a>

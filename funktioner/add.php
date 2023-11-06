@@ -7,13 +7,22 @@
     <title>Add</title>
 </head>
 <body>
-    <form class="btnMenu" enctype="multipart/form-data" action="#" method="post">
-        <input type="text" placeholder="name" name="name" id="nme">
-        <textarea name="description" id="description" cols="30" rows="10" placeholder="description"></textarea>
-        <input type="text" placeholder="price" name="price" id="price">
-        <input type="file" name="img" id="file"/>
-        <input type="submit" value="Submit" name="Submit">
-    </form>
+    <div class="con">
+        <form class="btnMenu" enctype="multipart/form-data" action="#" method="post">
+            <input type="text" placeholder="Namn på produkten" name="name" id="name">
+            <textarea name="description" id="description" cols="30" rows="10" placeholder="Beskrivning"></textarea>
+            <input type="text" placeholder="Kostnad" name="price" id="price">
+            <input type="file" name="img" id="file"/>
+            <input type="submit" value="Skapa" name="Submit">
+        </form>
+        <div class="btnMenu">
+            <a href="http://localhost/max_hemtenta2">Användargränssnitt</a>
+            <a href="http://localhost/max_hemtenta2/funktioner/add.php" class="activeBtn">Lägg till produkt</a>
+            <a href="http://localhost/max_hemtenta2/funktioner/read.php">Se alla produkter</a>
+            <a href="http://localhost/max_hemtenta2/funktioner/edit.php">Ändra pris/bild på produkt</a>
+            <a href="http://localhost/max_hemtenta2/funktioner/remove.php">Ta bort produkt</a>
+        </div>
+    </div>
 </body>
 </html>
 <?php
