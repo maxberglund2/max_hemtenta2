@@ -6,13 +6,13 @@
     <title>Add</title>
 </head>
 <body>
-<form enctype="multipart/form-data" action="#" method="post">
-                <input type="text" placeholder="name" name="name" id="nme">
-                <textarea name="description" id="description" cols="30" rows="10" placeholder="description"></textarea>
-                <input type="text" placeholder="price" name="price" id="price">
-                <input type="file" name="img" id="file"/>
-                <input type="submit" value="Submit" name="Submit">
-            </form>
+    <form enctype="multipart/form-data" action="#" method="post">
+        <input type="text" placeholder="name" name="name" id="nme">
+        <textarea name="description" id="description" cols="30" rows="10" placeholder="description"></textarea>
+        <input type="text" placeholder="price" name="price" id="price">
+        <input type="file" name="img" id="file"/>
+        <input type="submit" value="Submit" name="Submit">
+    </form>
 </body>
 </html>
 <?php
