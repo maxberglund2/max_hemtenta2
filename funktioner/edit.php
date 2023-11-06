@@ -10,7 +10,7 @@
     <div class="con">
         <form class="editForm" action="#" method="post">
             <table>
-                <tr><th colspan="4">Products</th><th>Select</th></tr>
+                <tr><th colspan="4">Alla Produkter</th><th>Välj</th></tr>
                 <?php
                     include 'connection.php';
 
@@ -38,7 +38,7 @@
                 ?>
             </table>
             <div class="btnMenu">
-                <input type="text" placeholder="price" name="price" id="price">
+                <input type="text" placeholder="price" name="price" id="price" style="margin-top: 0;;">
                 <input type="file" name="img" id="file"/>
                 <input type="submit" value="Ändra">
 
