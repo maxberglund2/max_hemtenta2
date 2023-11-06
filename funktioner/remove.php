@@ -56,7 +56,9 @@
                     }
                     $newSql = "DELETE FROM products WHERE id = " . (int)$selectedProductId;
             
-                    if (!$newConn->query($newSql) === TRUE) {
+                    if ($newConn->query($newSql) === TRUE) {
+                        header("Location: ./read.php");
+                    } else {
                         die( "Error deleting product: " . $newConn->error);
                     }
             

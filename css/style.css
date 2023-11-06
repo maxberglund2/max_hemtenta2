@@ -7,7 +7,12 @@ body {
     letter-spacing: 1px;
     background-color: #343541;
     color: white;
+    display:flex;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
 }
+
 a {
     color:white;
     text-decoration: none;
@@ -53,7 +58,9 @@ img {
     justify-content:space-between;
     align-items:stretch;
     padding: 0 20px 0 20px;
-    height:90vh;
+    height:auto;
+    min-height: 60vh;
+    max-height: 90vh;
 }
 .btnMenu:nth-child(1){
     margin-top: 0;
