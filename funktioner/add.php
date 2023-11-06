@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Add</title>
 </head>
 <body>
-    <form enctype="multipart/form-data" action="#" method="post">
+    <form class="btnMenu" enctype="multipart/form-data" action="#" method="post">
         <input type="text" placeholder="name" name="name" id="nme">
         <textarea name="description" id="description" cols="30" rows="10" placeholder="description"></textarea>
         <input type="text" placeholder="price" name="price" id="price">

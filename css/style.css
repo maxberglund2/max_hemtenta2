@@ -15,8 +15,15 @@ a {
     text-align: center;
     padding: 20px;
     transition: ease-in-out 400ms;
+    border:none;
 }
-a:hover {
+.activeBtn {
+    border: 1px solid red;
+    box-sizing: border-box;
+    cursor:default;
+    pointer-events: none;
+}
+a:hover:not(.activeBtn) {
     background-color: #434654;
 }
 table {
@@ -45,5 +52,44 @@ img {
     flex-flow:column;
     justify-content:space-evenly;
     align-items:stretch;
-    height:80vh;
+    padding: 0 20px 0 20px;
+    height:90vh;
 }
+.editForm {
+    display: flex;
+}
+.formInputs {
+    display: flex;
+    flex-flow: column;
+    padding: 0 20px 0 20px;
+}
+
+input[type=text], textarea, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    color:white;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px;
+    transition: ease-in-out 400ms;
+
+}
+
+input[type=submit]:hover {
+    background-color: #434654;
+}
+
+
