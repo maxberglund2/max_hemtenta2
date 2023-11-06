@@ -36,7 +36,7 @@
                 ?>
             </table>
             <div class="btnMenu">
-                <input type="text" placeholder="price" name="price" id="price" style="margin-top: 0;;">
+                <input type="text" placeholder="price" name="price" id="price" style="margin-top: 0;">
                 <input type="file" name="img" id="file"/>
                 <input type="submit" name="submit" value="Ändra">
 
