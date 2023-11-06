@@ -31,7 +31,7 @@
                         echo "</tr>";
                     }
                 } else {
-                    echo "0 results";
+                    echo "<tr><td>0 results</td></tr>";
                 }
 
                 $conn->close();

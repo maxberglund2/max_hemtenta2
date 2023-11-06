@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="con">
-        <form class="editForm" action="#" method="post">
+        <form class="editForm" enctype="multipart/form-data" action="#" method="post">
             <table>
                 <tr><th colspan="4">Alla Produkter</th><th>Välj</th></tr>
                 <?php
@@ -25,11 +25,11 @@
                             echo "<td>" . $row["description"] . "</td>";
                             echo "<td>" . $row["price"] . "kr</td>";
                             echo "<td><img src='../" . $row["image"] . "' alt='" . $row["name"] . "'></td>";
-                            echo "<td><input type='radio' name='delete[]' value='" . $row["id"] . "'></td>";
+                            echo "<td><input type='radio' name='product' value='" . $row["id"] . "'></td>";
                             echo "</tr>";
                         }
                     } else {
-                        echo "0 results";
+                        echo "<tr><td>0 results</td></tr>";
                     }
 
                     $conn->close();
@@ -38,7 +38,8 @@
             <div class="btnMenu">
                 <input type="text" placeholder="price" name="price" id="price" style="margin-top: 0;;">
                 <input type="file" name="img" id="file"/>
-                <input type="submit" value="Ändra">
+                <input type="submit" name="submit" value="Ändra">
+
 
                 <a href="http://localhost/max_hemtenta2">Användargränssnitt</a>
                 <a href="http://localhost/max_hemtenta2/funktioner/add.php">Lägg till produkt</a>
@@ -48,6 +49,26 @@
             </div>
         </form>
         <?php
+            if (isset($_POST['submit'])) {
+                if (isset($_POST['product'])) {
+                    $selectedProductId = $_POST['product'];
+            
+                    $newConn = new mysqli($servername, $username, $password, $dbname);
+                    if ($newConn->connect_error) {
+                    die("Connection failed: " . $newConn->connect_error);
+                    }
+                    $newSql = "DELETE FROM products WHERE id = " . (int)$selectedProductId;
+            
+                    if (!$newConn->query($newSql) === TRUE) {
+                        die( "Error deleting product: " . $newConn->error);
+                    }
+            
+                    $conn->close();
+                } else {
+                    echo "No product selected for deletion.";
+                }
+            }
+            
         ?>
     </div>
 </body>
