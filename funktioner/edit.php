@@ -27,7 +27,7 @@
                             echo "<td>" . $row["name"] . "</td>";
                             echo "<td>" . $row["description"] . "</td>";
                             echo "<td>" . $row["price"] . "kr</td>";
-                            echo "<td><img src='../" . $row["image"] . "' alt='" . $row["name"] . "'></td>";
+                            echo "<td><img src=".$row["image"]." alt='" . $row["name"] . "'></td>";
                             // anger id från produkten till value för radio button
                             echo "<td><input type='radio' name='product' value='" . $row["id"] . "'></td>";
                             echo "</tr>";

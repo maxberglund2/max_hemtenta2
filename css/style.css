@@ -8,7 +8,6 @@ body {
     background-color: #343541;
     color: white;
     display:flex;
-    height:100vh;
     justify-content:center;
     align-items:center;
 }
@@ -49,10 +48,9 @@ img {
     height:100px;
 }
 .con {
-    margin-top:4%;
+    margin-top:40px;
     display:flex;
     justify-content:space-evenly;
-    width:95vw;
 }
 .btnMenu {
     display:flex;

@@ -35,14 +35,19 @@
         $name = $_POST["name"];
         $description = $_POST["description"];
         $price = $_POST["price"];
-        $target_dir = "img/";
+
+       /*  $target_dir = "img/";
         // tar bilden
         $target_file = $target_dir . basename($_FILES["img"]["name"]);
-        move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
+        move_uploaded_file($_FILES["img"]["tmp_name"], $target_file); */
+
+        $target_dir = "../img/";
+            $filepath = $target_dir . basename($_FILES["img"]["name"]);
+            move_uploaded_file($_FILES["img"]["tmp_name"], $filepath);
 
         // lägger in i tabellen (DB)
         $sql = "INSERT INTO products (name, description, price, image)
-        VALUES ('$name', '$description', '$price', '$target_file')";
+        VALUES ('$name', '$description', '$price', '$filepath')";
 
         // om sql variabeln går igenom tar den mig till read.php
         if ($conn->query($sql) === TRUE) {

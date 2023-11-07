@@ -28,7 +28,7 @@
                         echo "<td>" . $row["name"] . "</td>";
                         echo "<td>" . $row["description"] . "</td>";
                         echo "<td>" . $row["price"] . "kr</td>";
-                        echo "<td><img src='../" . $row["image"] . "' alt='" . $row["name"] . "'></td>";
+                        echo "<td><img src=".$row["image"]." alt='" . $row["name"] . "'></td>";
                         echo "</tr>";
                     }
                 } else {
