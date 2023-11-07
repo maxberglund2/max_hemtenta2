@@ -31,7 +31,7 @@
     { 
         include 'connection.php';
 
-        // data från formulären
+        // data från formulären, får fram det igenom att kolla på attributet name="example"
         $name = $_POST["name"];
         $description = $_POST["description"];
         $price = $_POST["price"];

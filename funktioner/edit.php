@@ -16,16 +16,19 @@
 
                     // tar ALLT från tabellen
                     $sql = "SELECT * FROM products";
-                    $result = $conn->query($sql);
 
+                    // så länge som den finns mer tuples kommer if sattsen gå igenom
+                    $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         // en while loop som går igenom tabblen
                         while($row = $result->fetch_assoc()) {
+                            // skappar tr, td taggar för tabellen i HTML (rader = tr)
                             echo "<tr>";
                             echo "<td>" . $row["name"] . "</td>";
                             echo "<td>" . $row["description"] . "</td>";
                             echo "<td>" . $row["price"] . "kr</td>";
                             echo "<td><img src='../" . $row["image"] . "' alt='" . $row["name"] . "'></td>";
+                            // anger id från produkten till value för radio button
                             echo "<td><input type='radio' name='product' value='" . $row["id"] . "'></td>";
                             echo "</tr>";
                         }

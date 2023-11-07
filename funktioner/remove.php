@@ -16,21 +16,25 @@
 
                     // tar allt från tabellen
                     $sql = "SELECT * FROM products";
-                    $result = $conn->query($sql);
 
+                    // så länge som den finns mer tuples kommer if sattsen gå igenom
+                    $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
-                        // en while loop som går igenom tabblen
+                        // en while loop som går igenom tabblen beroende på antal tuples i DB
                         while($row = $result->fetch_assoc()) {
+                            // skappar tr, td taggar för tabellen i HTML (rader = tr)
                             echo "<tr>";
                             echo "<td>" . $row["name"] . "</td>";
                             echo "<td>" . $row["description"] . "</td>";
                             echo "<td>" . $row["price"] . "kr</td>";
                             echo "<td><img src='../" . $row["image"] . "' alt='" . $row["name"] . "'></td>";
+                            // anger id från produkten till value för radio button
                             echo "<td><input type='radio' name='product' value='" . $row["id"] . "'></td>";
                             echo "</tr>";
                         }
                     } else {
-                        echo "<tr><td>0 results</td></tr>";
+                        // om inte det finns några tuples (rader) i DB
+                        echo "<tr><td>Inga produkter</td></tr>";
                     }
 
                     $conn->close();
@@ -50,7 +54,9 @@
         <?php
             // vid tryck av ta bort knapp ->
             if (isset($_POST['submit'])) {
+                // om en radio button är vald
                 if (isset($_POST['product'])) {
+                    // tar radio "button's value"
                     $selectedProductId = $_POST['product'];
             
                     $newConn = new mysqli($servername, $username, $password, $dbname);
