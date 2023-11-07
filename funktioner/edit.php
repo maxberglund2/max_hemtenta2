@@ -14,6 +14,7 @@
                 <?php
                     include 'connection.php';
 
+                    // tar ALLT från tabellen
                     $sql = "SELECT * FROM products";
                     $result = $conn->query($sql);
 
@@ -29,13 +30,14 @@
                             echo "</tr>";
                         }
                     } else {
-                        echo "<tr><td>0 results</td></tr>";
+                        echo "<tr><td>Inga produkter</td></tr>";
                     }
 
                     $conn->close();
                 ?>
             </table>
             <div class="btnMenu">
+                <!-- formulär för förändringen -->
                 <input type="text" placeholder="Kostnad" name="price" id="price" style="margin-top: 0;">
                 <input type="file" name="img" id="file"/>
                 <input type="submit" name="submit" value="Ändra">
@@ -49,6 +51,7 @@
             </div>
         </form>
         <?php
+
             if (isset($_POST['submit'])) {
                 if (isset($_POST['product'])) {
                     $selectedProductId = $_POST['product'];
@@ -58,6 +61,7 @@
                     $password = "";
                     $dbname = "crud_app";
     
+                    // en ny connection
                     $newConn = new mysqli($servername, $username, $password, $dbname);
 
                     if ($newConn->connect_error) {
@@ -71,6 +75,7 @@
                     $target_file = $target_dir . basename($_FILES["img"]["name"]);
                     move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
                     
+                    // kollar om file selector är tom
                     if (!$_FILES['img']['size'] == 0) {
                         $file_uploaded = true;
                     }
@@ -87,6 +92,7 @@
 
                     $newSql .= "WHERE id = " . (int)$selectedProductId;
 
+                    // om sql går igneom tar den mig till read.php
                     if ($newConn->query($newSql) === TRUE) {
                         header("Location: ./read.php");
                         exit();

@@ -14,6 +14,7 @@
                 <?php
                     include 'connection.php';
 
+                    // tar allt från tabellen
                     $sql = "SELECT * FROM products";
                     $result = $conn->query($sql);
 
@@ -35,6 +36,7 @@
                     $conn->close();
                 ?>
             </table>
+            <!-- Ta bort knappen, och andra meny knappar -->
             <div class="btnMenu">
                 <input type="submit" name="submit" value="Ta bort" style="background-color:red; margin-top: 0;">
 
@@ -46,6 +48,7 @@
             </div>
         </form>
         <?php
+            // vid tryck av ta bort knapp ->
             if (isset($_POST['submit'])) {
                 if (isset($_POST['product'])) {
                     $selectedProductId = $_POST['product'];
@@ -54,8 +57,11 @@
                     if ($newConn->connect_error) {
                     die("Connection failed: " . $newConn->connect_error);
                     }
+
+                    // Tar bort produkten från tabellen
                     $newSql = "DELETE FROM products WHERE id = " . (int)$selectedProductId;
             
+                    // om sql går igenom tar den mig till read.php
                     if ($newConn->query($newSql) === TRUE) {
                         header("Location: ./read.php");
                     } else {

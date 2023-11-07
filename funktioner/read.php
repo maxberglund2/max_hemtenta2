@@ -15,6 +15,7 @@
             <?php
                 include 'connection.php';
 
+                // tar allt från DB (products)
                 $sql = "SELECT * FROM products";
                 $result = $conn->query($sql);
 

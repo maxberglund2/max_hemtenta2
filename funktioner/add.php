@@ -26,20 +26,25 @@
 </body>
 </html>
 <?php
+    // När formulären körs
     if(isset($_POST['Submit']))
     { 
         include 'connection.php';
 
+        // data från formulären
         $name = $_POST["name"];
         $description = $_POST["description"];
         $price = $_POST["price"];
         $target_dir = "img/";
+        // tar bilden
         $target_file = $target_dir . basename($_FILES["img"]["name"]);
         move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
 
+        // lägger in i tabellen (DB)
         $sql = "INSERT INTO products (name, description, price, image)
         VALUES ('$name', '$description', '$price', '$target_file')";
 
+        // om sql variabeln går igenom tar den mig till read.php
         if ($conn->query($sql) === TRUE) {
             header("Location: read.php");
             exit();
